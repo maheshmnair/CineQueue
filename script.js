@@ -68,13 +68,25 @@ async function singleMovie() {
 async function addTofavorites(id) {
     console.log("fav-item", id);
 
+    for (i in localStorage) {
+        // If the ID passed as argument matches with value associated with key, then removing it 
+        if (localStorage[i] == id) {
+            alert('Movie already in the Watchlist!')
+            return false;
+        }
+    }
+
     localStorage.setItem(Math.random().toString(36).slice(2, 7), id);// math.random for the unique key and value pair
     alert('Movie Added to Watchlist!');
 }
 
 //Removing the movie from the favorites list  and also from the localstorage
 async function removeFromfavorites(id) {
-    console.log(id);
+    var confirmation = confirm("Are you sure to remove this item from Watchlist?");
+    if (!confirmation) {
+        return false;
+    }
+    console.log('remove-item', id);
     for (i in localStorage) {
         // If the ID passed as argument matches with value associated with key, then removing it 
         if (localStorage[i] == id) {
@@ -82,8 +94,6 @@ async function removeFromfavorites(id) {
             break;
         }
     }
-    //Alerting the user and refreshing the page
-    alert('Movie Removed from Watchlist');
     window.location.replace('favorite.html');
 }
 
