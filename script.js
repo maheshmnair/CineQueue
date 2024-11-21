@@ -25,11 +25,15 @@ async function singleMovie() {
     console.log(data);
     console.log(url);
 
+    var img = 'img/BlankPoster.jpeg';
+    if (data.Poster != 'N/A') {
+        img = data.Poster;
+    }
     // Making the output html by string interpolition
     var output = `
 
     <div class="movie-poster">
-        <img src=${data.Poster} alt="Movie Poster">
+        <img src=${img} alt="Movie Poster">
     </div>
     <div class="movie-details">
         <div class="details-header">
@@ -103,12 +107,9 @@ async function displayMovieList(movies) {
     //Traversing over the movies list which is passed as an argument to our function
     for (i of movies) {
 
-        var img = '';
+        var img = 'img/BlankPoster.jpeg';
         if (i.Poster != 'N/A') {
             img = i.Poster;
-        }
-        else {
-            img = 'img/BlankPoster.jpeg';
         }
         var id = i.imdbID;
 
@@ -167,11 +168,10 @@ async function favoritesMovieLoader() {
             console.log(data);
 
 
-            var img = ''
-            if (data.Poster) {
-                img = data.Poster
+            var img = 'img/BlankPoster.jpeg';
+            if (data.Poster != 'N/A') {
+                img = data.Poster;
             }
-            else { img = data.Title }
             var Id = data.imdbID;
             //Adding all the movie html in the output using interpolition
             output += `
