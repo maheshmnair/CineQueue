@@ -13,6 +13,9 @@ fetch('http://www.omdbapi.com/?i=tt3896198&apikey=48aa722f')
 // Upon keypress - function findMovies is initiated
 searchInput.addEventListener('input', findMovies);
 
+async function login() {
+    window.location.href = "homePage.html";
+}
 
 async function singleMovie() {
     // Finding ID of the movie from the URL
@@ -118,13 +121,13 @@ async function displayMovieList(movies) {
 
         <div class="fav-item">
             <div class="fav-poster">
-            <a href="movie.html?id=${id}"><img src=${img} alt="Favourites Poster"></a>
+            <a href="movieDetails.html?id=${id}"><img src=${img} alt="Favourites Poster"></a>
             </div>
             <div class="fav-details">
                 <div class="fav-details-box">
                     <div>
-                        <p class="fav-movie-name"><a href="movie.html?id=${id}">${i.Title}</a></p>
-                        <p class="fav-movie-rating"><a href="movie.html?id=${id}">${i.Year}</a></p>
+                        <p class="fav-movie-name"><a href="movieDetails.html?id=${id}">${i.Title}</a></p>
+                        <p class="fav-movie-rating"><a href="movieDetails.html?id=${id}">${i.Year}</a></p>
                     </div>
                     <div>
                         <i class="fa-solid fa-bookmark" style="cursor:pointer;" onClick=addTofavorites('${id}')></i>
@@ -178,7 +181,7 @@ async function favoritesMovieLoader() {
 
         <div class="fav-item">
             <div class="fav-poster">
-                <a href="movie.html?id=${id}"><img src=${img} alt="Favourites Poster"></a>
+                <a href="movieDetails.html?id=${id}"><img src=${img} alt="Favourites Poster"></a>
             </div>
             <div class="fav-details">
                 <div class="fav-details-box">
