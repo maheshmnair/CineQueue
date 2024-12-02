@@ -84,7 +84,7 @@ async function addTofavorites(id) {
     alert('Movie Added to Watchlist!');
 }
 
-//Removing the movie from the favorites list  and also from the localstorage
+//Removing the movie from the favorites list and also from the localstorage
 async function removeFromfavorites(id) {
     var confirmation = confirm("Are you sure to remove this item from Watchlist?");
     if (!confirmation) {
@@ -98,7 +98,7 @@ async function removeFromfavorites(id) {
             break;
         }
     }
-    window.location.replace('favorite.html');
+    window.location.replace('watchList.html');
 }
 
 //Displaying the movie list on the search page according to the user list
