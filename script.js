@@ -14,7 +14,15 @@ fetch('http://www.omdbapi.com/?i=tt3896198&apikey=48aa722f')
 searchInput.addEventListener('input', findMovies);
 
 async function login() {
-    window.location.href = "homePage.html";
+    let email = document.getElementById('log_email');
+    let passwd = document.getElementById('log_pwd');
+    if(email!="" || !passwd!=""){
+        window.location.href = "homePage.html";
+    }
+    else{
+        alert('Either username or password is incorrect!')
+    }
+    
 }
 
 async function singleMovie() {
