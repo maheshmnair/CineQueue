@@ -3,6 +3,22 @@
 
 const key = '48aa722f';
 
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    login();
+});
+
+async function login() {
+    let email = document.getElementById('log_email').value;
+    let passwd = document.getElementById('log_pwd').value;
+
+    if(email === "test@abc.com" && passwd === "test") {
+        window.location.href = "homePage.html";
+    } else {
+        alert('Either username or password is incorrect!');
+    }
+}
+
 var searchInput = document.getElementById('Input');
 var displaySearchList = document.getElementsByClassName('fav-container');
 
@@ -12,18 +28,6 @@ fetch('http://www.omdbapi.com/?i=tt3896198&apikey=48aa722f')
 
 // Upon keypress - function findMovies is initiated
 searchInput.addEventListener('input', findMovies);
-
-async function login() {
-    let email = document.getElementById('log_email');
-    let passwd = document.getElementById('log_pwd');
-    if(email!="" || !passwd!=""){
-        window.location.href = "homePage.html";
-    }
-    else{
-        alert('Either username or password is incorrect!')
-    }
-    
-}
 
 async function singleMovie() {
     // Finding ID of the movie from the URL
