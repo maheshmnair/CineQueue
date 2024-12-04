@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Title-->
-    <title>CineQueue</title>
+    <title>Details - CineQueue</title>
 
     <!--CSS and JavaScript-->
-    <link rel="stylesheet" type="text/css" href="mainStyle.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,36 +22,24 @@
     <script src="https://kit.fontawesome.com/d5635d350d.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="singleMovie()">
     <!--Header Bar-->
     <div class="header">
         <div class="header-container">
             <div>
-                <h1>Search for movies</h1>
+                <h1>Movie Details</h1>
             </div>
             <div class="header-link">
-                <span><a href="watchList.html">Watchlist</a></span>
+                <span><a href="index.html">Back to Home</a></span>
             </div>
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Type the movie name here..." class="search-bar" id="Input">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </div>
     <!--Main Content Container-->
     <div class="main">
-        <!-- Search Items Display Section -->
-        <div class="fav-container">
-            <!-- Items are displayed here -->
-        </div>
-        <!--Watermark Area / Start Exploring Section-->
-        <div class="start-exploring">
-            <i class="fa-solid fa-photo-film fa-4x"></i><br>
-            <span>start cin-E-xploring!</span>
+        <div class="movie-container">
+            <!-- Movie details are displayed here-->
         </div>
     </div>
-
-    <script src="./script.js"></script>
 </body>
 
 </html>
